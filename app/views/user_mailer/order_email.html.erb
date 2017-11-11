@@ -1,0 +1,14 @@
+    <h1>Welcome to Jungle.com, fellow explorer</h1>
+    <p>
+      You have successfully signed up to Jungle.com,
+      your email is: <%= @order.email %>.<br>
+    </p>
+    <p>
+      Here is your order # <%= @order.id %>
+    </p>
+
+    <% @total_price = 0 %>
+    <% @order.line_items.each do |line_item| %>
+      <%= render 'order_product', line_item: line_item %>
+    <% end %>
+    <p>Thanks for joining and enjoy! Total Price: $<%= @total_price %>.</p>
