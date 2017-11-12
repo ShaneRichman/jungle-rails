@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
     charge = perform_stripe_charge
     order  = create_order(charge)
 
-    # byebug
     if order.valid?
       UserMailer.order_email(order).deliver_now
       empty_cart!
