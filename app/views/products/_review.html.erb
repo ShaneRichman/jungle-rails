@@ -6,18 +6,8 @@
       <dt>Review</dt>
       <dd><%= review.description %></dd>
     </dl>
+    <% if review.user_id == current_user.id%>
+      <%= link_to fa_icon('trash'),  @reviews, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
   </div>
 </div>
-
-
-
-<!-- <div class="col-md-6 col-md-offset-3">
-  <div class="row">
-    <div class="col-6 col-md-4">
-      <%= review.rating %>
-    </div>
-    <div class="col-12 col-md-8">
-      <%= review.description %>
-    </div>
-  </div>
-</div> -->
