@@ -6,8 +6,8 @@
       <dt>Review</dt>
       <dd><%= review.description %></dd>
     </dl>
-    <% if review.user_id == current_user.id%>
-      <%= link_to fa_icon('trash'),  @reviews, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+    <% if !current_user.nil? && review.user_id == current_user.id%>
+      <%= link_to fa_icon('trash'),  [@product, @review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   </div>
 </div>

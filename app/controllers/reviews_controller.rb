@@ -13,15 +13,16 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def review_params
-    params.require(:review).permit(:rating, :description, :user_id, :product_id)
-  end
-
   def destroy
-    byebug
     @review = Review.find params[:id]
     @review.destroy
-    redirect_to "/products/#{@product.id}", notice: 'Review deleted!'
+    redirect_to :back
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:rating, :description, :user_id, :product_id)
   end
 
 end

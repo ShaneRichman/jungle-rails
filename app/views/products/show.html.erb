@@ -25,7 +25,8 @@
         </dl>
       </div>
     </div>
-    <% if current_user %>
+    <% if !current_user.nil? %>
+
       <div class="row">
         <%= form_for [@product, @review] do |f| %>
           <%= f.label :description %>
@@ -37,10 +38,12 @@
           <%= f.submit "Submit Review", class: "btn" %>
         <% end %>
       </div>
-      <% @product.reviews.reverse.each do |review| %>
-        <%= render 'review', review: review%>
-      <% end %>
     <% end %>
+
+    <% @product.reviews.reverse.each do |review| %>
+      <%= render 'review', review: review%>
+    <% end %>
+
   </article>
 
 </section>
