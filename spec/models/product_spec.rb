@@ -17,17 +17,14 @@ RSpec.describe Product, type: :model do
     it 'should not validate when empty name' do
       @product.name = nil
       expect(@product).not_to be_valid
-
     end
     it 'should not validate when empty price' do
       @product.price_cents = nil
       expect(@product).not_to be_valid
-
     end
     it 'should not validate when empty quantity' do
       @product.quantity = nil
       expect(@product).not_to be_valid
-
     end
     it 'should not validate when empty category' do
       @product.category = nil
