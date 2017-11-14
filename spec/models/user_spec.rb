@@ -62,6 +62,25 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-
+    before(:each) do
+      @user1 = User.new
+      @user1.first_name = "Shane"
+      @user1.last_name = "Richman"
+      @user1.email = "shane@shane.shane"
+      @user1.password = "shane"
+      @user1.password_confirmation = "shane"
+      @user1.save
+    end
+    it 'should validate with full specs' do
+      expect(@user1).to be_valid
+    end
+    it 'should validate when there is a space before and/or after the email' do
+      @user1.email = " shane@shane.shane "
+      expect((User.authenticate_with_credentials @user1.email, @user1.password) == @user1 ).to be_present
+    end
+    it 'should validate if email is strangly cased' do
+      @user1.email = "ShAnE@sHaNE.SHAne"
+      expect((User.authenticate_with_credentials @user1.email, @user1.password) == @user1 ).to be_present
+    end
   end
 end
