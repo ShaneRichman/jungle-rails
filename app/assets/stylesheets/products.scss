@@ -1,7 +1,26 @@
-  .review {
-    background-color: grey;
-    border-radius: .5;
+  .new_review {
+    margin-top: 5px;
     margin-bottom: 5px;
+
+    input.btn {
+      background-color: #f3f3f3;
+    }
+  }
+
+  .review {
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 5px;
+
+    .review-description {
+      text-align: left;
+    }
+
+    .btn-danger{
+      margin: 5px;
+    }
   }
 
 main section.products-index,

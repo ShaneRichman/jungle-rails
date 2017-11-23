@@ -1,9 +1,9 @@
 <div class="row">
   <div class="container col-md-6 review">
     <dl class="dl-horizontal">
-      <dt class="rating">Rating</dt>
+      <dt class="review-description">Rating</dt>
       <dd><%= review.rating %></dd>
-      <dt>Review</dt>
+      <dt class="review-description">Review</dt>
       <dd><%= review.description %></dd>
     </dl>
     <% if !current_user.nil? && review.user_id == current_user.id%>
