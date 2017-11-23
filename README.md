@@ -2,6 +2,11 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## screenshots
+
+!["Frontpage to browse products"](https://github.com/ShaneRichman/jungle-rails/blob/master/docs/jungle-frontPage.png)
+!["making a order using stripe and showing cart in background"](https://github.com/ShaneRichman/jungle-rails/blob/master/docs/cart-stripe.png)
+!["Sign up form"](https://github.com/ShaneRichman/jungle-rails/blob/master/docs/jungle-signup.png)
 
 ## Setup
 
